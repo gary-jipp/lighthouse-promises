@@ -1,8 +1,8 @@
 # lighthouse-promises
 
-Open the Branches of this Project for all the code
+### ** Open the Branches of this Project for all the code **
  
- Promises Topics
+ ## Promises
 - why we prefer them to callbacks for chaining operations
 - how and why we create them (rarely)
 - how and when we use them (often!)
