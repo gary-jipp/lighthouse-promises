@@ -19,6 +19,10 @@ myPromise(1).
     console.log("then 3: ", results);
     return myPromise(4);
   })
+  .then(res => {
+    results.res4 = res;
+    console.log("then 4: ", results);
+  })
   .catch(err => {
     console.log("catch:", err);
   })
