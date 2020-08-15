@@ -12,6 +12,6 @@
 
 - `then` and `catch` always return a Promise
 
-- so *whatever* is returned from a `then` (or a `catch`) becomes the next `then` as another `Promise`.  If it was a 'value', then the Promise is always resolved.  If it was a Promise, then that Promise can resolve or reject as usual.
+- so *whatever* is returned from a `then` (or a `catch`) is handled by the next `then` as another `Promise`.  If it was a 'value', then the Promise is always resolved.  If it was a Promise, then that Promise can resolve or reject as usual.
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises#Chaining
