@@ -1,29 +1,15 @@
-const { Pool } = require("pg");
+const axios= require("axios");
 
-console.log("\n***End of User Thread ***\n");
+console.log("\n***Start of User Thread ***\n");
 
-const pool = new Pool({
-  user: "vagrant",
-  password: "123",
-  host: "localhost",
-  database: "bootcampx",
-});
+const url = 'https://api.kanye.rest/';
+const promise = axios.get(url);
 
-const query1 = "SELECT id, name FROM cohorts LIMIT 5";
-const query2 = "SELECT id, name, cohort_id FROM students LIMIT 5;";
-
-pool.query(query1)
-  .then(res => {
-    console.log(res.rows);
-    return pool.query(query2)
+promise
+  .then(result => {
+    console.log(result.data.quote);
   })
-  .then(res => {
-    console.log(res.rows);
-  })
-  .catch(err => console.log("query error:", err.routine))
-  .finally(() => {
-    console.log("finally.  Cleanup");
-    pool.end();
-  });
+  .catch(e=>console.log(e.errno));
+
 
 console.log("\n***End of User Thread ***\n");
