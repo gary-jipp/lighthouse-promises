@@ -4,7 +4,7 @@
 - why we prefer them to callbacks for chaining operations
 - how and why we create them (rarely)
 - how and when we use them (often!)
-- using "finally"
+- using "catch" and "finally"
 - what a "return" from then() and catch() really does
 	- Whatever is returned gets pushed onto the "then" stack 
 	- The returned item does NOT have to be another Promise!
