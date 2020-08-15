@@ -7,7 +7,7 @@ const results = {};
 myPromise(1)
   .then(res => {
     results.r1 = res;
-    console.log("then 1: ", res);
+    console.log("then 1: ", results);
     return myPromise(2);
   })
   .then(res => {
