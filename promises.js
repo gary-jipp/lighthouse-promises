@@ -14,11 +14,7 @@ myPromise(1)
   .then(res => {
     console.log("then 3: ", res);
   })
-  .catch(err => {
-    console.log("catch:", err);
-  })
-  .finally(() => {
-    console.log("finally");
-  });
+  .catch(err => console.log("catch:", err))
+  .finally(() => console.log("finally"));
 
 console.log("\n***End of my Code ***\n");
