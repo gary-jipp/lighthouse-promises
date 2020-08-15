@@ -23,7 +23,7 @@ myPromise(1).
     console.log("then: ", res);;
   })
   .catch(err => {
-    console.log("catch", err);
+    console.log("catch:", err);
   })
   .finally(() => {
     console.log("finally");
