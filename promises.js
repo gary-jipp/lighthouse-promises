@@ -4,15 +4,15 @@ console.log("\n***Start of User Thread ***");
 // Handle the promise chain
 myPromise(1).
   then(res => {
-    console.log("then: ", res);
-    return myPromise(2);
+    console.log("then 1: ", res);
+    return myPromise(1);
   })
   .then(res => {
-    console.log("then: ", res);
-    return myPromise(3);
+    console.log("then 2: ", res);
+    return myPromise(1);
   })
   .then(res => {
-    console.log("then: ", res);;
+    console.log("then 3: ", res);;
   })
   .catch(err => {
     console.log("catch:", err);
