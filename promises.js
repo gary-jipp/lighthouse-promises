@@ -20,10 +20,10 @@ promise.then(res => {
     return myPromise(3);
   })
   .then(res => {
-    console.log(res);
+    console.log(res);   // what does this return?
   })
   .then(res => {
-    console.log(res);
+    console.log(res);   // What's happening here?
   });
 
 
