@@ -20,4 +20,4 @@ promise
   .finally(() => pool.end());
 // without this, program does not exit cleanly
 
-console.log("\n***End of my Code ***\n");
+console.log("***End of my Code ***\n");
