@@ -13,11 +13,11 @@ promise = myPromise(1);
 promise
   .then(res => {
     console.log("then:", res);
-    return myPromise(2); // Start a new one
+    return myPromise(2); // Return a new promise
   })
   .then(res => {
     console.log("then:", res);
-    return myPromise(3); // Start another
+    return myPromise(3); // Return another
   })
   .then(res => {
     console.log("then:", res); // what does this callback return?
