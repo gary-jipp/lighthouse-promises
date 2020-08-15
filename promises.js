@@ -1,11 +1,11 @@
-const { myPromise } = require('./myPromise');
+const { myPromise } = require("./myPromise");
 console.log("\n***Start of my Code ***");
 
 // Save promise results here
 const results = {};
 
-myPromise(1).
-  then(res => {
+myPromise(1)
+  .then(res => {
     results.r1 = res;
     console.log("then 1: ", res);
     return myPromise(2);
@@ -30,6 +30,5 @@ myPromise(1).
   .finally(() => {
     console.log("finally");
   });
-
 
 console.log("\n***End of my Code ***\n");
