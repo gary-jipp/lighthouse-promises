@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 
-console.log("\n***End of User Thread ***\n");
+console.log("\n***Start of my Code ***");
 
 const pool = new Pool({
   user: "vagrant",
@@ -12,18 +12,24 @@ const pool = new Pool({
 const query1 = "SELECT id, name FROM cohorts LIMIT 5";
 const query2 = "SELECT id, name, cohort_id FROM students LIMIT 5;";
 
-pool.query(query1)
+// An object to save my stuff, if needed
+const results = {};
+
+pool
+  .query(query1)
   .then(res => {
     console.log(res.rows);
-    return pool.query(query2)
+    results.r1 = res.rows;
+    return pool.query(query2);
   })
   .then(res => {
     console.log(res.rows);
+    results.r2 = res.rows;
   })
   .catch(err => console.log("query error:", err.routine))
   .finally(() => {
-    console.log("finally.  Cleanup");
     pool.end();
+    console.log(results);
   });
 
-console.log("\n***End of User Thread ***\n");
+console.log("***End of my Code ***\n");
