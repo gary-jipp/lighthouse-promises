@@ -3,7 +3,7 @@ console.log("\n***Start of User Thread ***");
 
 // function that returns a promise
 const myPromise = function (value) {
-  const promise = Promise.resolve("Promise Complete: " + 10);
+  const promise = Promise.resolve("Promise Complete: " + value);
   return promise;
 };
 
