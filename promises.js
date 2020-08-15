@@ -1,5 +1,5 @@
 
-console.log("\n***Start of User Thread ***");
+console.log("\n***Start of my Code ***");
 
 // function that returns a promise
 const myPromise = function (value) {
@@ -18,4 +18,4 @@ promise.then(res => {
 });
 
 
-console.log("\n***End of User Thread ***\n");
+console.log("\n***End of my Code ***\n");
