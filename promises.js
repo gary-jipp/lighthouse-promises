@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 
-console.log("\n***End of User Thread ***\n");
+console.log("\n***Start of my Code ***");
 
 const pool = new Pool({
   user: "vagrant",
@@ -17,9 +17,7 @@ promise
     console.log(res.rows);
   })
   .catch(err => console.log("query error:", err.routine))
-  .finally(() => {
-    console.log("finally.  Cleanup");
-    pool.end(); // without this, program does not exit cleanly
-  });
+  .finally(() => pool.end());
+// without this, program does not exit cleanly
 
-console.log("\n***End of User Thread ***\n");
+console.log("\n***End of my Code ***\n");
