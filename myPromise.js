@@ -3,8 +3,8 @@
 const myPromise1 = function (timeout) {
 	const promise = new Promise(() => {
 		setTimeout(() => {
-			console.log("Timeout complete");
-		}, timeout * 1000);
+			console.log("Timeout complete:", timeout);
+		}, timeout * 200);
 	});
 	return promise;
 };
@@ -14,14 +14,16 @@ const myPromise1 = function (timeout) {
 const myPromise2 = function (timeout) {
 	const promise = new Promise((resolve) => {
 		setTimeout(() => {
-			resolve("Yay! That worked");
-		}, timeout * 1000);
+			resolve("Complete:" + timeout);
+		}, timeout * 200);
 	});
 	return promise;
 };
 
+
 // We can also tell the caller that the operation failed
 const myPromise = function (timeout) {
+
 	const promise = new Promise((resolve, reject) => {
 		if (timeout <= 0) {
 			reject("Bad value: " + timeout);
@@ -30,7 +32,7 @@ const myPromise = function (timeout) {
 
 		setTimeout(() => {
 			resolve("Complete: " + timeout);
-		}, timeout * 1000);
+		}, timeout * 200);
 	});
 
 	return promise;

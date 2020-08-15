@@ -5,11 +5,11 @@ console.log("\n***Start of my Code ***");
 myPromise(1).
   then(res => {
     console.log("then 1: ", res);
-    return myPromise(1);
+    return myPromise(2);
   })
   .then(res => {
     console.log("then 2: ", res);
-    return myPromise(1);
+    return myPromise(3);
   })
   .then(res => {
     console.log("then 3: ", res);;
