@@ -24,11 +24,7 @@ myPromise(1)
     results.r4 = res;
     console.log("then 4: ", results);
   })
-  .catch(err => {
-    console.log("catch:", err);
-  })
-  .finally(() => {
-    console.log("finally");
-  });
+  .catch(err => console.log("catch:", err))
+  .finally(() => console.log("finally"));
 
 console.log("\n***End of my Code ***\n");
