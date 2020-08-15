@@ -30,4 +30,4 @@ promise
     console.log("then:", res); // Wait, what's happening here?
   });
 
-console.log("\n***End of my Code ***\n");
+console.log("***End of my Code ***\n");
