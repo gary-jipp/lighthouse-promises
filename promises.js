@@ -8,14 +8,23 @@ const myPromise = function (value) {
 };
 
 // use our promise-based function
-promise = myPromise(10);
+promise = myPromise(1);
 
 // Handle the promise
 promise.then(res => {
-
   console.log(res);
-
-});
+  return myPromise(2);
+})
+  .then(res => {
+    console.log(res);
+    return myPromise(3);
+  })
+  .then(res => {
+    console.log(res);
+  })
+  .then(res => {
+    console.log(res);
+  });
 
 
 console.log("\n***End of User Thread ***\n");
