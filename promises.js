@@ -1,26 +1,27 @@
 const { myPromise } = require('./myPromise');
-console.log("\n***Start of User Thread ***");
+console.log("\n***Start of my Code ***");
 
-// Handle the promise chain
-let results = {};
+// Save promise results here
+const results = {};
+
 myPromise(1).
   then(res => {
-    results.res1 = res;
+    results.r1 = res;
     console.log("then 1: ", res);
     return myPromise(2);
   })
   .then(res => {
-    results.res2 = res;
+    results.r2 = res;
     console.log("then 2: ", results);
     return myPromise(3);
   })
   .then(res => {
-    results.res3 = res;
+    results.r3 = res;
     console.log("then 3: ", results);
     return myPromise(4);
   })
   .then(res => {
-    results.res4 = res;
+    results.r4 = res;
     console.log("then 4: ", results);
   })
   .catch(err => {
@@ -31,4 +32,4 @@ myPromise(1).
   });
 
 
-console.log("\n***End of User Thread ***\n");
+console.log("\n***End of my Code ***\n");
