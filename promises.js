@@ -9,17 +9,21 @@ const pool = new Pool({
   database: "bootcampx",
 });
 
-const query = "SELECT id, name FROM cohorts LIMIT 5";
-const promise = pool.query(query);
+const query1 = "SELECT id, name FROM cohorts LIMIT 5";
+const query2 = "SELECT id, name, cohort_id FROM students LIMIT 5;";
 
-promise
+pool.query(query1)
+  .then(res => {
+    console.log(res.rows);
+    return pool.query(query2)
+  })
   .then(res => {
     console.log(res.rows);
   })
   .catch(err => console.log("query error:", err.routine))
   .finally(() => {
     console.log("finally.  Cleanup");
-    pool.end(); // without this, program does not exit cleanly
+    pool.end();
   });
 
 console.log("\n***End of User Thread ***\n");
