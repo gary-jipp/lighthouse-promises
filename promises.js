@@ -9,7 +9,7 @@ const pool = new Pool({
   database: "bootcampx",
 });
 
-const query = "SELECT id, name, cohort_id FROM students LIMIT 5;";
+const query = "SELECT id, name FROM cohorts LIMIT 5";
 const promise = pool.query(query);
 
 promise
