@@ -14,7 +14,7 @@ const url3 = "http://ron-swanson-quotes.herokuapp.com/v2/quotes";
 const promise1 = axios.get(url1).catch(e => e); // what's this??
 const promise2 = axios.get(url2).catch(e => e);
 const promise3 = axios.get(url3).catch(e => e);
-const results={};
+const results = {};
 
 Promise.all([promise1, promise2, promise3])
   .then(res => {
@@ -26,6 +26,7 @@ Promise.all([promise1, promise2, promise3])
     console.log("Affirm:", results.r2);
     console.log("Ron:", results.r3);
   })
-  .catch(e => console.log("catch:", e)); // maybe some other error?
+  // No promise will fire this catch.  But maybe something in the then() will
+  .catch(e => console.log("catch:", e));
 
 console.log("***End of my Code ***\n");
