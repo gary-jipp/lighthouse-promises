@@ -1,16 +1,11 @@
-
-console.log("\n***Start of User Thread ***");
+console.log("\n***Start of my Code ***");
 
 // Create a resolved promise - resolves to a String
 const promise = Promise.resolve("Promise Complete");
 
 // The most basic of promise handling
-// promise.then(handler);
 promise.then(res => {
-
   console.log(res);
-
 });
 
-
-console.log("\n***End of User Thread ***\n");
+console.log("\n***End of my Code ***\n");
