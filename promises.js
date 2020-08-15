@@ -1,9 +1,9 @@
-const { myPromise } = require('./myPromise');
+const { myPromise } = require("./myPromise");
 console.log("\n***Start of my Code ***");
 
 // Handle the promise chain
-myPromise(1).
-  then(res => {
+myPromise(1)
+  .then(res => {
     console.log("then 1: ", res);
     return myPromise(2);
   })
@@ -12,7 +12,7 @@ myPromise(1).
     return myPromise(3);
   })
   .then(res => {
-    console.log("then 3: ", res);;
+    console.log("then 3: ", res);
   })
   .catch(err => {
     console.log("catch:", err);
@@ -20,6 +20,5 @@ myPromise(1).
   .finally(() => {
     console.log("finally");
   });
-
 
 console.log("\n***End of my Code ***\n");
