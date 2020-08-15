@@ -1,29 +1,32 @@
 
 console.log("\n***Start of User Thread ***");
 
-// function that returns a promise
+// function that returns a promise. Rejects bad values
 const myPromise = function (value) {
-  const promise = Promise.resolve("Promise Complete: " + value);
-  return promise;
+  if (value < 0) {
+    return Promise.reject("Bad Value!: " + value);
+  }
+  return Promise.resolve("Promise Complete: " + value);
 };
 
-// use our promise-based function
-promise = myPromise(1);
-
-// Handle the promise
-promise.then(res => {
-  console.log(res);
-  return myPromise(2);
-})
+// Handle the promise chain
+myPromise(1).
+  then(res => {
+    console.log(res);
+    return myPromise(2);
+  })
   .then(res => {
     console.log(res);
-    return myPromise(3);
+    return myPromise(-3);
   })
   .then(res => {
     console.log(res);
   })
-  .then(res => {
-    console.log(res);
+  .catch(err => {
+    console.log(err);
+  })
+  .finally(() => {
+    console.log("finally");
   });
 
 
