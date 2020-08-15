@@ -1,34 +1,25 @@
-const { myPromise } = require('./myPromise');
-console.log("\n***Start of User Thread ***");
+const { Pool } = require("pg");
 
-// Handle the promise chain
-let results = {};
-myPromise(1).
-  then(res => {
-    results.res1 = res;
-    console.log("then 1: ", res);
-    return myPromise(2);
-  })
+console.log("\n***End of User Thread ***\n");
+
+const pool = new Pool({
+  user: "vagrant",
+  password: "123",
+  host: "localhost",
+  database: "bootcampx",
+});
+
+const query = "SELECT id, name, cohort_id FROM students LIMIT 5;";
+const promise = pool.query(query);
+
+promise
   .then(res => {
-    results.res2 = res;
-    console.log("then 2: ", results);
-    return myPromise(3);
+    console.log(res.rows);
   })
-  .then(res => {
-    results.res3 = res;
-    console.log("then 3: ", results);
-    return myPromise(4);
-  })
-  .then(res => {
-    results.res4 = res;
-    console.log("then 4: ", results);
-  })
-  .catch(err => {
-    console.log("catch:", err);
-  })
+  .catch(err => console.log("query error:", err.routine))
   .finally(() => {
-    console.log("finally");
+    console.log("finally.  Cleanup");
+    pool.end(); // without this, program does not exit cleanly
   });
-
 
 console.log("\n***End of User Thread ***\n");
