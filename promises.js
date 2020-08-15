@@ -1,6 +1,6 @@
 const axios = require("axios");
+console.log("\n***Start of my Code ***");
 
-console.log("\n***Start of User Thread ***\n");
 const url1 = "https://api.kanye.rest/";
 const url2 = "https://www.affirmations.dev/";
 const url3 = "http://ron-swanson-quotes.herokuapp.com/v2/quotes";
@@ -17,4 +17,4 @@ Promise.all([promise1, promise2, promise3])
   })
   .catch(e => console.log(e.errno));
 
-console.log("\n***End of User Thread ***\n");
+console.log("***End of my Code ***\n");
