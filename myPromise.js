@@ -30,7 +30,7 @@ const myPromise = function (timeout) {
 
 		setTimeout(() => {
 			resolve("Complete: " + timeout);
-		}, timeout * 1000);
+		}, timeout * 100);
 	});
 
 	return promise;

@@ -7,17 +7,17 @@ myPromise(1).
   then(res => {
     results.res1 = res;
     console.log("then 1: ", res);
-    return myPromise(1);
+    return myPromise(2);
   })
   .then(res => {
     results.res2 = res;
     console.log("then 2: ", results);
-    return myPromise(1);
+    return myPromise(3);
   })
   .then(res => {
     results.res3 = res;
     console.log("then 3: ", results);
-    return myPromise(1);
+    return myPromise(4);
   })
   .catch(err => {
     console.log("catch:", err);
