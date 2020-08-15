@@ -8,4 +8,4 @@ promise.then(res => {
   console.log(res);
 });
 
-console.log("\n***End of my Code ***\n");
+console.log("***End of my Code ***\n");
