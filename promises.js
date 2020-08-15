@@ -1,5 +1,5 @@
 const { myPromise } = require('./myPromise');
-console.log("\n***Start of User Thread ***");
+console.log("\n***Start of my Code ***");
 
 // Handle the promise chain
 myPromise(1).
@@ -22,4 +22,4 @@ myPromise(1).
   });
 
 
-console.log("\n***End of User Thread ***\n");
+console.log("\n***End of my Code ***\n");
