@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const isError = function (res) {
+const error = function (res) {
   if (!res.data) {
     return res.response.status + ": " + res.response.statusText;
   }
@@ -17,9 +17,9 @@ const promise3 = axios.get(url3).catch(e => e);
 
 Promise.all([promise1, promise2, promise3])
   .then(res => {
-    console.log("Kanye:", isError(res[0]) || res[0].data.quote);
-    console.log("Affirm:", isError(res[1]) || res[1].data.affirmation);
-    console.log("Ron:", isError(res[2]) || res[2].data[0]);
+    console.log("Kanye:", error(res[0]) || res[0].data.quote);
+    console.log("Affirm:", error(res[1]) || res[1].data.affirmation);
+    console.log("Ron:", error(res[2]) || res[2].data[0]);
   })
   .catch(e => console.log(e.errno));
 
