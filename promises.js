@@ -1,5 +1,4 @@
-
-console.log("\n***Start of User Thread ***");
+console.log("\n***Start of my Code ***");
 
 // function that returns a promise. Rejects bad values
 const myPromise = function (value) {
@@ -10,24 +9,27 @@ const myPromise = function (value) {
 };
 
 // Handle the promise chain
-myPromise(1).
-  then(res => {
-    console.log(res);
+myPromise(1)
+  .then(res => {
+    console.log("then:", res);
     return myPromise(2);
   })
   .then(res => {
-    console.log(res);
+    console.log("then:", res);
     return myPromise(-3);
   })
   .then(res => {
-    console.log(res);
+    console.log("then:", res);
   })
   .catch(err => {
-    console.log(err);
+    console.log("catch:", err);
+    return err;
+  })
+  .then(res => {
+    console.log("then:", res);  // we got the err value here
   })
   .finally(() => {
     console.log("finally");
   });
 
-
-console.log("\n***End of User Thread ***\n");
+console.log("\n***End of my Code ***\n");
