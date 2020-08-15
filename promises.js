@@ -2,17 +2,22 @@ const { myPromise } = require('./myPromise');
 console.log("\n***Start of User Thread ***");
 
 // Handle the promise chain
+let results = {};
 myPromise(1).
   then(res => {
+    results.res1 = res;
     console.log("then 1: ", res);
     return myPromise(1);
   })
   .then(res => {
-    console.log("then 2: ", res);
+    results.res2 = res;
+    console.log("then 2: ", results);
     return myPromise(1);
   })
   .then(res => {
-    console.log("then 3: ", res);;
+    results.res3 = res;
+    console.log("then 3: ", results);
+    return myPromise(1);
   })
   .catch(err => {
     console.log("catch:", err);
