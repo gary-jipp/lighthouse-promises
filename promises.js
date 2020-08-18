@@ -11,8 +11,11 @@ const callback = function (res) {
 // Lets see what my promise has to say
 promise.then(callback);
 
-// of course, we seldom use named callback functions
-// We use anonymous arrow functions
+/**
+ * Of course, we seldom use named callback functions
+ * We use anonymous arrow function
+ * Lets ask the same promise for its results again.
+ */
 promise.then(res => {
   console.log(res);
 });
