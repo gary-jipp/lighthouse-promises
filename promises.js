@@ -12,10 +12,12 @@ promise = myPromise(10);
 
 // Handle the promise
 promise.then(res => {
-
   console.log(res);
-
 });
 
+// by the way, what does the "then" return?
+const myThen = promise.then(res => {
+  console.log(res);
+});
 
 console.log("\n***End of my Code ***\n");
