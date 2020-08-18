@@ -14,7 +14,7 @@ Promise.all([promise1, promise2, promise3])
   .then(res => {
     // Now we have to handle both situations (fulfill or reject)
     console.log("Kanye:", res[0].data ? res[0].data.quote : res[0]);
-    console.log("Affirm:", res[1].data ? res[1].data.affieration : res[1]);
+    console.log("Affirm:", res[1].data ? res[1].data.affirmation : res[1]);
     console.log("Ron:", res[2].data ? res[2].data[0] : res[2]);
   })
   // No promise will fire this catch.  But maybe something in the then() will
