@@ -20,4 +20,6 @@ Promise.all([promise1, promise2, promise3])
   // No promise will fire this catch.  But maybe something in the then() will
   .catch(e => console.log("catch:", e));
 
+// Note: the new Promise.allSettled() function does somethign similar 
+
 console.log("***End of my Code ***\n");
