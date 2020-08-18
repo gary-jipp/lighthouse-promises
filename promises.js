@@ -16,10 +16,10 @@ promise.then(res => {
 });
 
 // by the way, what does the "then" return?
-const myThen = promise.then(res => {
+const returnFromThen = promise.then(res => {
   console.log(res);
 });
 
-console.log(myThen);
+console.log(returnFromThen);
 
 console.log("\n***End of my Code ***\n");
