@@ -20,4 +20,6 @@ const myThen = promise.then(res => {
   console.log(res);
 });
 
+console.log(myThen);
+
 console.log("\n***End of my Code ***\n");
