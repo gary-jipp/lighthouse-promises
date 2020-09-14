@@ -1,14 +1,18 @@
 console.log("\n***Start of my Code ***");
 
-// Create a resolved promise - resolves to a String
-const promise = Promise.resolve("Promise Complete");
+const SomeFunctionThatReturnsAPromise = function(someParam) {
+  return Promise.resolve("Promise Complete");
+}
 
-// Callback Function to pass to then()
+// the standard promise pattern
+const promise = SomeFunctionThatReturnsAPromise(5);
+promise.then();
+
+// of course, we need to tell "then" whan to do when the proimise is done.
 const callback = function (res) {
   console.log(res);
 };
 
-// Lets see what my promise has to say
 promise.then(callback);
 
 /**
