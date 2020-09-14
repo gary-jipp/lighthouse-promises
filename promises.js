@@ -2,13 +2,13 @@
 console.log("\n***Start of my Code ***");
 
 // function that returns a promise
-const myPromise = function (value) {
-  const promise = Promise.resolve("Promise Complete: " + value);
+const orderPizza = function (value) {
+  const promise = Promise.resolve("Your Pizza is Ready: $" + value);
   return promise;
 };
 
 // use our promise-based function
-promise = myPromise(10);
+promise = orderPizza(10);
 
 // Handle the promise
 promise.then(res => {
