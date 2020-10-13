@@ -1,7 +1,10 @@
 console.log("\n***Start of my Code ***");
 
-// Create a resolved promise - resolves to a String
-const promise = Promise.resolve("Promise Complete");
+// function that returns a promise
+const myPromise = function (value) {
+  const promise = Promise.resolve("Promise Complete: " + value);
+  return promise;
+};
 
 // Callback Function to pass to then()
 const callback = function (res) {
@@ -9,6 +12,7 @@ const callback = function (res) {
 };
 
 // Lets see what my promise has to say
+const promise = myPromise(0);
 promise.then(callback);
 
 /**
