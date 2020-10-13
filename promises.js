@@ -1,9 +1,8 @@
-
 console.log("\n***Start of my Code ***");
 
 // function that returns a promise
 const orderPizza = function (value) {
-  const promise = Promise.resolve("Your Pizza is Ready: $" + value);
+  const promise = Promise.resolve("Your Pizza is Ready: " + value);
   return promise;
 };
 
