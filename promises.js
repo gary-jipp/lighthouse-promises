@@ -1,8 +1,9 @@
 console.log("\n***Start of my Code ***");
 
-const orderPizza = function(someParam) {
-  return Promise.resolve("Promise Complete");
-}
+const orderPizza = function (value) {
+  const promise = Promise.resolve("Your Pizza is Ready: " + value);
+  return promise;
+};
 
 // the standard promise pattern
 const promise = orderPizza(5);
