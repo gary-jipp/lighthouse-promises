@@ -1,11 +1,11 @@
 console.log("\n***Start of my Code ***");
 
-const SomeFunctionThatReturnsAPromise = function(someParam) {
+const orderPizza = function(someParam) {
   return Promise.resolve("Promise Complete");
 }
 
 // the standard promise pattern
-const promise = SomeFunctionThatReturnsAPromise(5);
+const promise = orderPizza(5);
 promise.then();
 
 // of course, we need to tell "then" whan to do when the proimise is done.
