@@ -1,6 +1,6 @@
 console.log("\n***Start of my Code ***");
 
-// function that returns a promise
+// Some function that returns a promise (example only)
 const myPromise = function (value) {
   const promise = Promise.resolve("Promise Complete: " + value);
   return promise;
