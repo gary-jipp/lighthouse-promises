@@ -1,28 +1,18 @@
-console.log("\n***Start of my Code ***");
+console.log("***Start of my Code ***\n");
 
-const orderPizza = function (value) {
-  const promise = Promise.resolve("Your Pizza is Ready: " + value);
-  return promise;
-};
-
-// the standard promise pattern
-const promise = orderPizza(5);
-promise.then();
-
-// of course, we need to tell "then" whan to do when the proimise is done.
-const callback = function (res) {
-  console.log(res);
-};
-
-promise.then(callback);
-
-/**
- * Of course, we seldom use named callback functions
- * We use anonymous arrow function
- * Lets ask the same promise for its results again.
- */
-promise.then(res => {
-  console.log(res);
+const { Pool } = require("pg");
+const pool = new Pool({
+  user: "labber",
+  password: "labber",
+  host: "localhost",
+  database: "lightbnb",
 });
+
+const sql = "select id, name, email from users limit 10"; 
+pool.query(sql)
+  .then(res => {
+    console.log(res.rows);
+  });
+
 
 console.log("***End of my Code ***\n");
