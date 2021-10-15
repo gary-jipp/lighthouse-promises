@@ -20,5 +20,3 @@ const returnFromThen = promise.then(res => {
 });
 
 console.log(returnFromThen);
-
-console.log("\n***End of my Code ***\n");
