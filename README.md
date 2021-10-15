@@ -1,10 +1,11 @@
-# lighthouse-promises
+# Promises
 
-- A promise is an object with some methods (functions), such as `then()`
+- [ ] basic Promise pattern
+- [ ] calling then() the same Promise
+- [ ] chaining then()
+- [ ] return from then
+- [ ] Promise Functions
+- [ ] using catch()
+- [ ] return from catch()
 
-- the `then` function expects a callback function as its parameter
 
-- If you see this, its likely just demo code to create a promise
-```
-Promise.resolve("text");
-```
